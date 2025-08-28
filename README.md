@@ -43,6 +43,34 @@ $ uv run python singleton_multithread.py
 <__main__.DatabaseDriverThreaded object at 0x102ca7350>
 ```
 
+### Factory Method
+
+A method that provides a separation between the client (user) and the actual object creation
+
+* The client only calls the factory method.
+
+* The concrete factory class decides which product (object) to instantiate.
+
+* This hides the creation logic from the client
+
+PROS:
+* Requirements change
+* Dynamic Switching    
+* Seperation of Concern
+
+CONS:
+* Increased complexity
+* More class and abstraction
+
+Output of factory_method.py
+``` 
+$ uv run factory_method.py 
+USD
+Bitcoin
+EUR
+Etherium
+```
+
 ## Structural
 Patterns that focus on how classes and objects are composed to form larger structures, improving flexibility, testability, and scalability
 
