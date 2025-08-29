@@ -90,6 +90,13 @@ quivalent:
 Factory method: creates a single object
 Abstract Factory: creates a family of related objects
 
+Output of abstract_factory.py
+```
+$ uv run abstract_factory.py 
+Persian Restaurant: GhormeSabzi! doogh Abali
+American Restaurant: Hamburger Coca Cola
+```
+
 ## Structural
 Patterns that focus on how classes and objects are composed to form larger structures, improving flexibility, testability, and scalability
 
