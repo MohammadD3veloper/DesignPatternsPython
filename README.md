@@ -70,6 +70,25 @@ Bitcoin
 EUR
 Etherium
 ```
+### Abstract Factory
+It's one level above of the Factory Method; instead of creating a single product, it can create multiple related products
+it dosen't directly create objects itself,
+but rather acts as a factory of factories
+
+PROS:
+* provides a way to access functionality without caring about implementation
+* Seperation of concerns
+* Allows for testability
+* Consistency in related products
+
+CONS:
+* Increased Complexity
+* Difficult to add a new product of families
+    (all concrete factories must be updated)
+
+quivalent:
+Factory method: creates a single object
+Abstract Factory: creates a family of related objects
 
 ## Structural
 Patterns that focus on how classes and objects are composed to form larger structures, improving flexibility, testability, and scalability
