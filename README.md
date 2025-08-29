@@ -119,6 +119,34 @@ $ uv run creational/builder/builder.py
 {'URL': 'youtube.com', 'Authorization': 'abc123', 'Cache-Control': 100000}
 ```
 
+### Prototype
+Used when you need to copy an existing object without depending on its concrete class
+The copied object must provide proper cloning implementation
+Useful in testing, pre-production or when object creation is expensive
+
+PROS:
+* Avoids subclassing for creating copies
+* Improves performance by reusing existing objects
+* Dynamic object creation at runtime
+
+CONS:
+* Shallow copies may lead to shared references
+* Objects must provide proper cloning implementation
+* May increase complexity if object graph is deep
+* Tight coupling
+
+output of prototype.py:
+```
+uv run prototype.py 
+Background color is red
+Drawing a square of size: 5
+Drawing a square of size: 3
+Drawing a Circle of radius: 8
+Background color is red
+Drawing a square of size: 5
+Drawing a square of size: 3
+Drawing a Circle of radius: 8
+```
 
 ## Structural
 Patterns that focus on how classes and objects are composed to form larger structures, improving flexibility, testability, and scalability
