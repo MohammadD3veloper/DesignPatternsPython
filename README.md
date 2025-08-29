@@ -97,6 +97,29 @@ Persian Restaurant: GhormeSabzi! doogh Abali
 American Restaurant: Hamburger Coca Cola
 ```
 
+### Builder
+Used to construct complex objects step by step, especially when objects have many optional or required parameters.
+Separates the construction of an object from its representation, allowing the same construction process to create different representations.
+
+PROS:
+* Clarity
+* Immutability
+* Flexibility
+* Separation of concerns
+
+CONS:
+* More code
+* Overkill for simple objects
+* Harder to trace/debug
+
+Output of builder.py (classic_builder.py has same output)
+```
+$ uv run creational/builder/builder.py
+{'URL': 'google.com'}
+{'URL': 'youtube.com', 'Authorization': 'abc123', 'Cache-Control': 100000}
+```
+
+
 ## Structural
 Patterns that focus on how classes and objects are composed to form larger structures, improving flexibility, testability, and scalability
 
