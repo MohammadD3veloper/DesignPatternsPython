@@ -151,5 +151,29 @@ Drawing a Circle of radius: 8
 ## Structural
 Patterns that focus on how classes and objects are composed to form larger structures, improving flexibility, testability, and scalability
 
+### Adapters
+The Adapter is a structural design pattern that makes two incompatible classes work together.
+It is especially useful when you cannot or do not want to modify the existing classes
+
+PROS:
+* Reuse existing code without modification
+* Improves flexibility when integrating with third-party or legacy code
+* Separates concerns — client doesn’t need to know about underlying incompatible code
+* Makes systems more extensible with multiple adapters
+
+CONS:
+* Adds extra complexity and classes to the system
+* Too many adapters may make the architecture harder to maintain
+* Can reduce performance slightly due to the additional indirection
+
+output of adapter.py:
+```
+uv run adapter.py
+3rd party functionality 2.0 - 2
+3rd party functionality 3.0 - 2
+3rd party functionality 2.0 - 5
+3rd party functionality 6.0 - 1
+```
+
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
