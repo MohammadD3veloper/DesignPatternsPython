@@ -205,5 +205,33 @@ TV <__main__.TV object at 0x100550200> volume up: 1
 TV <__main__.TV object at 0x100550200> volume down: 0
 ```
 
+### Composite
+The Composite pattern allows you to compose objects into tree-like structures to represent part-whole hierarchies.
+It lets clients treat individual objects and compositions of objects uniformly, so you can manipulate many objects as a single entity.
+
+Use cases:
+
+Represent hierarchical structures (e.g., file system, organization charts).
+Treat single objects and groups of objects in the same way.
+Reduce client-side complexity when working with recursive structures.
+
+PROS:
+* Simplifies client code by treating individual and composite objects uniformly.
+* Makes it easy to add new components.
+* Can represent complex hierarchies clearly.
+
+CONS:
+* Can make the design more complex if overused.
+* Might require careful handling of recursion and tree traversal.
+* Equivalent concepts:
+* Tree structures in data.
+* Polymorphism is often used to allow uniform treatment of leaf and composite nodes.
+
+output of composite.py:
+```
+$ uv run composite.py
+Total price of PC: 1425
+```
+
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
