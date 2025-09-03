@@ -175,5 +175,35 @@ uv run adapter.py
 3rd party functionality 6.0 - 1
 ```
 
+### Bridge
+The Bridge is an abstraction from its implementation so that the two can vary independently.
+It’s especially useful when you have multiple orthogonal hierarchies (e.g., different
+devices and different types of remotes) and want to avoid a combinatorial explosion of classes.
+
+Key Idea:
+Instead of creating subclasses for every possible combination of abstraction and implementation, you bridge them via composition.
+
+PROS
+* Decouples abstraction from implementation → easier to extend both independently
+* Increases flexibility and scalability
+* Improves maintainability (each hierarchy evolves separately)
+* Avoids combinatorial class explosion
+
+CONS
+* Adds extra complexity with more classes and indirection
+* Harder for beginners to understand the relationship between abstraction and implementation
+* May be overkill for small/simple hierarchies
+
+Output of bridge.py:
+```uv run bridge.py 
+Radio <__main__.Radio object at 0x100550110> volume up: 1
+Radio <__main__.Radio object at 0x100550110> volume up: 2
+Radio <__main__.Radio object at 0x100550110> volume down: 1
+TV <__main__.TV object at 0x100550200> volume up: 1
+TV <__main__.TV object at 0x100550200> volume down: 0
+TV <__main__.TV object at 0x100550200> volume up: 1
+TV <__main__.TV object at 0x100550200> volume down: 0
+```
+
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
