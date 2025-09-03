@@ -237,33 +237,22 @@ Total price of PC: 1425
 The Decorator (or Wrapper) pattern is used to extend or modify the behavior of a class without changing its source code.
 It is especially useful when dealing with third-party classes or libraries over which you have no control, but you want to alter their functionality or add new features.
 
-Key ideas:
-
-Attach new behavior to an object dynamically at runtime.
-
-Override existing behavior without modifying the original class.
-
-Respect the Open/Closed Principle — open for extension, closed for modification.
-
-Can be used for personalization, logging, caching, or security features.
+Key ideas:   
+* Attach new behavior to an object dynamically at runtime.
+* Override existing behavior without modifying the original class.
+* Respect the Open/Closed Principle — open for extension, closed for modification.
+* Can be used for personalization, logging, caching, or security features.
 
 PROS:
-
-Add new features without modifying original code.
-
-Combine multiple decorators to build complex functionality.
-
-Improves code flexibility and reusability.
+* Add new features without modifying original code.
+* Combine multiple decorators to build complex functionality.
+* Improves code flexibility and reusability.
 
 CONS:
-
-Increases number of classes and complexity.
-
-Can make the object graph harder to follow.
-
-Too many nested decorators can be difficult to debug.
-
-Usage example: wrapping a basic coffee machine to add milk coffee preparation, while still keeping original small and large coffee functionality intact.
+* Increases number of classes and complexity.
+* Can make the object graph harder to follow.
+* Too many nested decorators can be difficult to debug.
+* Usage example: wrapping a basic coffee machine to add milk coffee preparation, while still keeping original small and large coffee functionality intact.
 
 output of wrapper.py:
 ``` $ uv run wrapper.py
