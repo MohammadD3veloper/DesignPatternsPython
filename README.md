@@ -344,3 +344,39 @@ Real Image: Displaying test.jpg
 
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
+
+
+### Chain Of Responsibility
+allows you to pass a request along a chain of handlers.
+Each handler either processes the request or forwards it to the next handler in the chain
+
+This helps decouple the sender of the request from the receiver since the sender does not need to know which handler will take care of it
+
+PROS
+* Loose coupling between sender and receiver.
+* Easy to add or remove handlers without modifying the client code.
+* Increases flexibility in assigning responsibilities to different handlers.
+* Makes code open for extension (add new handlers) but closed for modification (don’t touch existing ones).
+
+CONS
+* Debugging can be hard: not always clear which handler will process a request.
+* If no handler processes the request, it might get lost silently.
+* Performance overhead if the chain is long (request travels through many handlers).
+
+Use Cases
+* Event handling systems (UI frameworks where events are passed from child → parent)
+* Middleware pipelines (e.g., Django/Express middlewares, logging chains)
+* Customer support systems (L1 → L2 → Manager)
+* Request validation pipelines
+
+output of chain_of_responsibility.py:
+```
+$ uv run chain_of_responsibility.py
+Header with authentication
+Authorization: 123456
+ContentType: json
+Body: {"Username":"John"}
+
+Header without authentication
+ContentType: json
+```
