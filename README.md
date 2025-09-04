@@ -409,3 +409,37 @@ Adding order with id: 2
 Paying for order with id : 1
 Paying for order with id : 2
 ```
+
+### Interpreter
+Interpreter Design Pattern
+
+Interprets a language or expression based on a defined grammar.
+Useful for parsing, evaluating expressions, and building small domain-specific languages (DSLs).
+Can be implemented recursively to evaluate nested expressions
+
+Components:
+* Terminal Expression – the simplest, indivisible elements of the grammar (e.g., numbers, keywords)
+
+* Non-Terminal Expression – composed of one or more Terminal or Non-Terminal expressions; typically evaluated recursively (e.g., addition, subtraction, conditional statements)
+
+PROS:
+* Simplifies the design of complex parsing logic
+* Makes it easy to extend the language by adding new expressions
+* Provides a clear separation between grammar and evaluation logic
+
+CONS:
+* Can become inefficient for large grammars or deep recursive structures
+* Hard to maintain if the grammar is complex
+* May require significant memory and stack space for recursion
+* Not suitable for general-purpose programming languages with large syntax
+
+Usage Examples:
+* Simple expression evaluators (math calculators)
+* nterpreting configuration files or DSL scripts
+* Building rule engines
+
+output of interpreter.py:
+```
+$ uv run interpreter.py
+19.4
+```
