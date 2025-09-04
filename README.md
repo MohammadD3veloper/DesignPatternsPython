@@ -443,3 +443,38 @@ output of interpreter.py:
 $ uv run interpreter.py
 19.4
 ```
+
+### Iterator
+Provides a way to access the elements of a collection sequentially without exposing its underlying representation
+
+Key points:
+* Traverse a collection (array, list, tree, etc.)
+* Implements two main methods:
+* has_next() – checks if there are more elements to iterate over
+* next() – returns the next element in the sequence
+
+Use Cases:
+* When you want to iterate over a collection but hide its internal structure
+* When you need multiple ways of iterating over the same collection
+
+PROS:
+* Decouples collection from traversal logic
+* Multiple iterators can coexist for the same collection
+* Simplifies client code
+
+CONS:
+* Adds extra classes/interfaces for iteration
+* Slight overhead if used for very simple or small collections
+
+output of iterator.py:
+```
+$ uv run iterator.py
+Alex
+Carol
+John
+Michael
+Michael
+John
+Carol
+Alex
+```
