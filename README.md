@@ -284,5 +284,25 @@ Storing cache data to file ./default.prefs
 John
 ```
 
+### Flyweight
+The Flyweight design pattern is used when a system needs to handle a large number of similar objects. Instead of creating a new object for every instance, it reuses (shares) existing objects to reduce memory footprint and improve efficiency.
+
+PROS:
+* Reduces memory usage by sharing common state between objects
+* Improves performance when handling many similar objects
+* Decouples intrinsic (shared) state from extrinsic (unique) state
+
+CONS:
+* Increases code complexity (requires splitting state into intrinsic vs. extrinsic)
+* May complicate object lifecycle management
+* Can reduce clarity if overused
+
+
+output of flyweight.py
+```
+$ uv run structural/flyweight/flyweight.py
+S S P M S S S M S S S M S P P M P P P M M P S P M S S S M M S S S P P S P S P S M M P S M S S M S S M M M P M M P M M M M P P P M S M M P S S P P S P M M S P S P S P M S M P S P P P S P S S M S P M S P M P P S M M S P M S S P S S M S P M S P P S S S S S P P P S S P P S P P S P P S P M P P P M S M M P S P P S M M P M P M P S P S S M M S M M P S P S S S S P S P S M P M S P M S M P M P M M M P S M P M S P S M P P S M M M S M M M P S P S P M P M P P S M P P S S P P P S P M S S S M P P M P M P S M S M P M P P M P M P S M P S M S M M S M S M P S S P S P M S S P P S S S P M P S M P P S M P S M M S M M P M S M S P P S S P M M S M P M S M P P M S S S M P M S S S P S S S P S M M M M P S M M P S P S P S S S M M P M M P M P P S P P M P S P S S P M M P P M P P M P P P M P M S S S P M P S P P S M M P S M P S M M S P P S S M M M S P P M M P P M S M P S S M M P P M P P S M M P M S S S S P S S P S P S S P P S P M M P P P M P M P M P M S M S S S P S M P P P S S S S P M P S S S P M M S P M M M M P P M P %                                              
+```
+
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
