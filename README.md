@@ -304,5 +304,43 @@ $ uv run structural/flyweight/flyweight.py
 S S P M S S S M S S S M S P P M P P P M M P S P M S S S M M S S S P P S P S P S M M P S M S S M S S M M M P M M P M M M M P P P M S M M P S S P P S P M M S P S P S P M S M P S P P P S P S S M S P M S P M P P S M M S P M S S P S S M S P M S P P S S S S S P P P S S P P S P P S P P S P M P P P M S M M P S P P S M M P M P M P S P S S M M S M M P S P S S S S P S P S M P M S P M S M P M P M M M P S M P M S P S M P P S M M M S M M M P S P S P M P M P P S M P P S S P P P S P M S S S M P P M P M P S M S M P M P P M P M P S M P S M S M M S M S M P S S P S P M S S P P S S S P M P S M P P S M P S M M S M M P M S M S P P S S P M M S M P M S M P P M S S S M P M S S S P S S S P S M M M M P S M M P S P S P S S S M M P M M P M P P S P P M P S P S S P M M P P M P P M P P P M P M S S S P M P S P P S M M P S M P S M M S P P S S M M M S P P M M P P M S M P S S M M P P M P P S M M P M S S S S P S S P S P S S P P S P M M P P P M P M P M P M S M S S S P S M P P P S S S S P M P S S S P M M S P M M M M P P M P %                                              
 ```
 
+### Proxy
+A Proxy is a structural design pattern that provides a placeholder or surrogate object that controls access to another object.
+It implements the same interface as the real object so that it can be used interchangeably by clients.
+
+Key points:
+* Controls access to the real object (lazy initialization, security checks, logging, caching, etc.)
+* Manages the lifecycle of the real object (create on demand, destroy, reset, etc.)
+* Clients don’t need to know whether they are talking to the proxy or the real object.
+
+PROS
+* Can add access control, caching, logging, or lazy loading transparently
+* Protects the real object from unauthorized access or heavy load
+* Makes system more flexible (different proxies for different needs: remote proxy, virtual proxy, protection proxy, etc.)
+* Keeps the client code unchanged (since proxy has the same interface)
+
+CONS
+* Adds an extra layer of indirection (slight overhead)
+* Can increase complexity if overused
+* Must carefully ensure proxy and real subject remain consistent with the same interface
+
+Difference with Similar Patterns:
+* Facade → provides a simplified interface to a complex subsystem. It doesn’t mimic the real object’s interface.
+* Decorator → extends or modifies behavior of an object without managing its lifecycle.
+* Proxy → looks like the real object (same interface) but manages its access/lifecycle.
+
+output of proxy.py
+```
+$ uv run proxy.py 
+Proxy image: Displaying : test.jpg
+From disk
+Real image: Loading test.jpg
+Real Image: Displaying test.jpg
+
+Proxy image: Displaying : test.jpg
+From Cache
+Real Image: Displaying test.jpg
+```
+
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
