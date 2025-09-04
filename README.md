@@ -263,5 +263,26 @@ Basic CoffeeMachine making small coffee
 Enhanced coffee machine adding milk
 ```
 
+### Facade
+The Facade design pattern provides a simple interface to a larger body of complex code, such as a library, framework, or subsystem.
+It hides internal complexities and exposes only the parts that are necessary for the client.
+
+PROS:
+* Hides away complexity behind a single, simple interface
+* Provides a clear and unified entry point to complex functionality
+* Removes the need for direct object/memory management in the client
+* Simplifies client implementation and usage
+* Encourages separation of concerns (client doesn’t need to know system details)
+
+CONS:
+* Can become a god-object if too much responsibility is centralized
+* Risk of reducing flexibility by exposing only limited functionality
+
+output of facade.py:
+``` $ uv run facade.py
+Storing cache data to file ./default.prefs
+John
+```
+
 ## Behavioural
 Patterns that define how objects and classes interact and distribute responsibility
