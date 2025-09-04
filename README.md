@@ -380,3 +380,32 @@ Body: {"Username":"John"}
 Header without authentication
 ContentType: json
 ```
+
+### Command
+A Command pattern turns a request into a standalone object containing all information about the request.
+This object can then be passed, queued, logged, or assigned to different handlers without knowing who or how it will be executed
+
+Use Cases
+* The invoker only knows it should call execute() on a command
+* The receiver is the actual object that knows how to perform the action
+* The command object sits in between and fully decouples sender from receiver
+* Useful for Undo/Redo, task scheduling, logging, and macro recording
+
+PROS
+* Decouples sender (client) from receiver (executor)
+* Requests can be queued, logged, undone, or redone easily
+* Supports ordering, scheduling, and prioritization
+* Improves flexibility when adding new commands
+
+CONS
+* Increases number of classes (command per action)
+* May add complexity for simple actions
+
+output command.py:
+```
+$ uv run command.py 
+Adding order with id: 1
+Adding order with id: 2
+Paying for order with id : 1
+Paying for order with id : 2
+```
