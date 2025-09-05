@@ -541,3 +541,32 @@ Current state is : state-1
 Current state is : initial-state
 Current state is : state-2
 ```
+
+### Observer
+The Observer is a behavioral design pattern that defines a subscription mechanism. When the state of one object (the Subject) changes, all subscribed objects (Observers) are automatically notified
+
+Key Points:
+* One-to-many relationship: one Subject, multiple Observers
+* Observers are informed of changes in the Subject
+* Reduces coupling between Subject and Observers
+
+Pros:
+* Loose coupling between Subject and Observers
+* New Observers can be added or removed easily
+* Suitable for implementing event-driven systems
+
+Cons:
+* A large number of Observers can affect performance
+* The order of notifications may be important and hard to control
+* Debugging can become challenging in complex systems
+
+
+output of observer.py:
+```
+$ uv run observer.py
+Editor: Opening file log_new.log
+Save to log log.log Someone has performed open operation on the file log_new.log
+Editor: Saving file log_new.log
+Save to log log.log Someone has performed save operation on the file log_new.log
+Email to test@gmail.com: Someone has performed event type: save operation on the file : log_new.log
+```
