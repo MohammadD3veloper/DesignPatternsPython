@@ -507,3 +507,37 @@ Carol Sending message Hi Everyone!
 Alice Recieving message Hi Everyone!
 Bob Recieving message Hi Everyone!
 ```
+
+### Memento
+Allows an object to save and restore its internal state without exposing its implementation details. Useful for Undo/Redo functionality, snapshots, or state rollback
+
+Components:
+1. Memento – stores the internal state of the object
+2. Originator – creates a memento containing a snapshot of its current state and can restore its state from a memento
+3. Caretaker – manages mementos (e.g., keeps history, decides when to save/restore)
+
+Use cases:
+* Undo/Redo in text editors or drawing apps
+* Saving checkpoints in games
+* Rolling back configuration or transaction states
+
+PROS:
+* Encapsulates state without exposing implementation
+* Simplifies undo/redo operations
+* Keeps history clean and separated from business logic
+
+CONS:
+* Can consume a lot of memory if state snapshots are large
+* Complexity grows if there are many states or objects to track
+* Only stores state, not behavior; restoring may require careful handling of dependencies
+
+output of memento.py:
+```
+$ uv run memento.py 
+Current state is initial-state
+Current state is : state-1
+Current state is : state-2
+Current state is : state-1
+Current state is : initial-state
+Current state is : state-2
+```
