@@ -478,3 +478,32 @@ John
 Carol
 Alex
 ```
+
+### Mediator
+Mediator is a central object that defines how components interact
+Instead of components talking directly to each other, they communicate through the mediator
+
+This is common in:
+
+1. Microservices, where services don’t call each other directly but communicate via message broker / mediator (e.g., Kafka, RabbitMQ).
+
+2. UI Components, where buttons, dropdowns, text fields communicate through a central controller.
+
+PROS
+* Reduces coupling → components don’t depend on each other
+* Centralized communication → easier to maintain and extend
+* Improves scalability → new components can be added without breaking others
+* Encourages single responsibility → each component only handles its own job
+
+CONS
+* Mediator can become very complex (God object) if it handles too many * interactions
+* Performance bottleneck → all communication passes through the mediator
+* Hard to debug → indirect communication makes tracing harder
+
+output of mediator.py
+```
+$ uv run mediator.py 
+Carol Sending message Hi Everyone!
+Alice Recieving message Hi Everyone!
+Bob Recieving message Hi Everyone!
+```
