@@ -570,3 +570,36 @@ Editor: Saving file log_new.log
 Save to log log.log Someone has performed save operation on the file log_new.log
 Email to test@gmail.com: Someone has performed event type: save operation on the file : log_new.log
 ```
+
+### State
+The State pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class. At any point a program can be in a finite number of states, and each state can be encapsulated in a separate object
+
+PROS
+* Eliminates large conditional statements (if-else) for behavior changes
+* Improves maintainability and scalability
+* Each state is encapsulated and can evolve independently
+
+CONS
+* Can increase the number of classes in the system
+* If the number of states is large, the overall design can become complex
+
+output of state.py
+```
+$ uv run state.py
+Curently in <__main__.WelcomeScreenState object at 0x102a0cfe0> state
+1
+Move to playing
+Curently in <__main__.PlayingState object at 0x102a0f5f0> state
+0
+Move to Welcome
+From playing to welcome screen not allowed
+2
+Move to break
+Curently in <__main__.BreakState object at 0x102a0cfe0> state
+0
+Move to Welcome
+From break to welcome not allowed
+0
+Move to Welcome
+From break to welcome not allowed
+```
